@@ -1,0 +1,33 @@
+# ---- 操作系统 ----
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- 编辑器 / IDE ----
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+
+# ---- Node ----
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# ---- WorkBuddy 本地工作数据 ----
+# 含会话记忆与本地状态，不属于合集交付内容
+.workbuddy-ai/
+
+# ---- 临时产物 ----
+*.tmp
+*.bak
+*.orig

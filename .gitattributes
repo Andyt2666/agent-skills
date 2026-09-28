@@ -1,0 +1,47 @@
+# 行尾策略
+#
+# 本仓库大量内容是从 Linux 上游仓库克隆来的，工作区当前是 LF。
+# 默认的 core.autocrlf 会在检出时把 LF 转成 CRLF，这有两个问题：
+#   1. 违背「原版正文未改动」的承诺——文件被悄悄改了行尾
+#   2. .sh 脚本变成 CRLF 后在 Linux/macOS 下直接报错
+# 因此统一锁成 LF。
+
+* text=auto eol=lf
+
+# ---- 二进制：禁止任何转换 ----
+*.ttf   binary
+*.otf   binary
+*.woff  binary
+*.woff2 binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.pdf   binary
+*.gz    binary
+*.zip   binary
+*.xlsx  binary
+*.docx  binary
+*.pptx  binary
+
+# ---- 脚本：强制 LF ----
+*.sh    text eol=lf
+*.py    text eol=lf
+*.cjs   text eol=lf
+*.js    text eol=lf
+*.ts    text eol=lf
+
+# ---- 无扩展名的可执行脚本（上游 superpowers 带过来的）----
+skills/dev-subagent-driven/scripts/task-brief      text eol=lf
+skills/dev-subagent-driven/scripts/sdd-workspace   text eol=lf
+skills/dev-subagent-driven/scripts/review-package  text eol=lf
+skills/dev-executing-plans/scripts/task-start      text eol=lf
+skills/dev-executing-plans/scripts/task-done       text eol=lf
+
+# ---- Markdown / 文本：diff 友好 ----
+*.md    text eol=lf
+*.txt   text eol=lf
+*.json  text eol=lf
+*.yaml  text eol=lf
+*.yml   text eol=lf
